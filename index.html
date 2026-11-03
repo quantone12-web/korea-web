@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2585f5" />
+
+    <title>Korean Basic Class | Kursus Bahasa Korea untuk Pemula</title>
+    <meta
+      name="description"
+      content="Belajar bahasa Korea dari nol. Kuasai Hangeul, membaca, kosakata, tata bahasa, dan menulis kalimat sederhana. Biaya Rp10.000 per pertemuan."
+    />
+    <link rel="icon" type="image/jpeg" href="korea.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --blue: #2585f5;
+        --dark: #17263d;
+        --muted: #6d7c90;
+        --light: #f4f8ff;
+        --border: #e5edf7;
+        --white: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+        color: var(--dark);
+        line-height: 1.7;
+        background: white;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 40px));
+        margin: auto;
+      }
+
+      section {
+        scroll-margin-top: 85px;
+      }
+
+      .eyebrow {
+        color: var(--blue);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: clamp(29px, 4vw, 39px);
+        line-height: 1.25;
+        letter-spacing: -1.2px;
+        margin-bottom: 15px;
+      }
+
+      h2 span,
+      h1 span {
+        color: var(--blue);
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .section {
+        padding: 85px 0;
+      }
+
+      .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 21px;
+        border: 0;
+        border-radius: 9px;
+        background: var(--blue);
+        color: white;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .button:hover {
+        background: #126bd6;
+        transform: translateY(-2px);
+      }
+
+      .button-outline {
+        background: white;
+        border: 1px solid var(--border);
+        color: var(--dark);
+      }
+
+      .button-outline:hover {
+        background: var(--light);
+        color: var(--blue);
+      }
+
+      /* NAVIGATION */
+
+      .header {
+        height: 76px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: white;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--dark);
+        font-size: 19px;
+        font-weight: 800;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        background: var(--blue);
+        color: white;
+        border-radius: 10px;
+      }
+
+      .logo span:last-child {
+        color: var(--blue);
+      }
+
+      .nav nav {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav nav a {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .nav nav a:hover {
+        color: var(--blue);
+      }
+
+      .nav nav .nav-button {
+        color: white;
+        background: var(--blue);
+        padding: 10px 16px;
+        border-radius: 8px;
+      }
+
+      /* HERO */
+
+      .hero {
+        background: linear-gradient(115deg, #f0f7ff, #fff 80%);
+        overflow: hidden;
+      }
+
+      .hero-inner {
+        min-height: 550px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 5vw, 58px);
+        line-height: 1.15;
+        letter-spacing: -2px;
+        margin: 18px 0;
+      }
+
+      .hero-content p {
+        max-width: 520px;
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 25px;
+      }
+
+      .hero-price {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .hero-price strong {
+        color: var(--dark);
+        font-size: 17px;
+      }
+
+      .hero-visual {
+        min-height: 370px;
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+
+      .circle {
+        position: absolute;
+        width: 315px;
+        height: 315px;
+        border-radius: 50%;
+        background: #e0efff;
+      }
+
+      .korean-card {
+        position: relative;
+        z-index: 1;
+        width: 300px;
+        padding: 35px 20px;
+        text-align: center;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: white;
+        box-shadow: 0 20px 50px #245b9118;
+        transform: rotate(-3deg);
+      }
+
+      .korean-card small {
+        color: #94a2b4;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        font-weight: 800;
+      }
+
+      .korean-card strong {
+        display: block;
+        color: var(--blue);
+        font-size: 49px;
+        margin: 12px 0 0;
+      }
+
+      .korean-card span {
+        font-weight: 700;
+      }
+
+      .korean-card p {
+        font-size: 12px;
+        margin: 5px 0 0;
+      }
+
+      .float {
+        position: absolute;
+        z-index: 2;
+        background: white;
+        padding: 9px 15px;
+        border-radius: 9px;
+        color: var(--blue);
+        font-weight: 800;
+        box-shadow: 0 8px 25px #00000010;
+      }
+
+      .float.one {
+        top: 35px;
+        right: 0;
+      }
+      .float.two {
+        bottom: 30px;
+        left: 0;
+      }
+
+      /* TRUST POINTS */
+
+      .trust {
+        padding: 25px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+      }
+
+      .trust-item strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .trust-item span {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      /* ABOUT */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .about-text p {
+        font-size: 13px;
+        line-height: 2;
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      .check-list li {
+        margin: 11px 0;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        color: var(--blue);
+        font-weight: 800;
+        margin-right: 10px;
+      }
+
+      /* LEARNING GOALS */
+
+      .goals {
+        background: var(--light);
+      }
+
+      .section-title {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto 40px;
+      }
+
+      .section-title p {
+        font-size: 13px;
+      }
+
+      .goal-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .goal-card {
+        padding: 24px 20px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        transition: 0.2s;
+      }
+
+      .goal-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px #00000008;
+      }
+
+      .goal-icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: #e9f3ff;
+        color: var(--blue);
+        font-size: 23px;
+        font-weight: 800;
+      }
+
+      .goal-card h3 {
+        font-size: 15px;
+        margin: 17px 0 8px;
+      }
+
+      .goal-card p {
+        font-size: 11px;
+        line-height: 1.9;
+        margin: 0;
+      }
+
+      /* CURRICULUM */
+
+      .curriculum-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .lesson {
+        display: flex;
+        gap: 17px;
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .lesson-number {
+        flex-shrink: 0;
+        width: 39px;
+        height: 39px;
+        display: grid;
+        place-items: center;
+        background: #eaf4ff;
+        color: var(--blue);
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 12px;
+      }
+
+      .lesson h3 {
+        font-size: 14px;
+        margin: 0 0 5px;
+      }
+
+      .lesson p {
+        font-size: 11px;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .lesson small {
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 10px;
+      }
+
+      /* METHOD */
+
+      .method {
+        background: var(--light);
+      }
+
+      .method-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .method-card {
+        background: white;
+        padding: 25px;
+        border-radius: 13px;
+        border: 1px solid var(--border);
+      }
+
+      .method-card .number {
+        font-size: 29px;
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .method-card h3 {
+        font-size: 15px;
+        margin: 10px 0;
+      }
+
+      .method-card p {
+        font-size: 12px;
+        line-height: 1.9;
+      }
+
+      /* PRICE */
+
+      .price-inner {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .price-panel {
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        box-shadow: 0 15px 40px #00000009;
+      }
+
+      .price-panel small {
+        color: #8796a9;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      .price-panel strong.price-value {
+        display: block;
+        font-size: 38px;
+        color: var(--blue);
+        margin-top: 8px;
+      }
+
+      .price-panel p {
+        font-size: 12px;
+        line-height: 2;
+      }
+
+      .price-line {
+        height: 1px;
+        background: var(--border);
+        margin: 20px 0;
+      }
+
+      .price-panel .button {
+        width: 100%;
+      }
+
+      /* FAQ */
+
+      .faq {
+        background: var(--light);
+      }
+
+      .faq-list {
+        max-width: 760px;
+        margin: auto;
+      }
+
+      details {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 17px 20px;
+        margin-bottom: 11px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      details p {
+        font-size: 12px;
+        line-height: 1.9;
+        margin: 12px 0 0;
+      }
+
+      /* REGISTER */
+
+      .register {
+        background: linear-gradient(120deg, #eff6ff, #f8fbff);
+      }
+
+      .register-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 65px;
+        align-items: start;
+      }
+
+      .register-info {
+        padding-top: 25px;
+      }
+
+      .register-info p {
+        font-size: 13px;
+        line-height: 2;
+      }
+
+      .contact {
+        border-left: 3px solid var(--blue);
+        padding-left: 15px;
+        margin-top: 25px;
+      }
+
+      .contact small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .contact strong {
+        font-size: 17px;
+      }
+
+      .form-card {
+        background: white;
+        padding: 28px;
+        border-radius: 15px;
+        border: 1px solid var(--border);
+        box-shadow: 0 12px 35px #00000009;
+      }
+
+      .form-card h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .form-card > p {
+        font-size: 11px;
+      }
+
+      .form-group {
+        margin-top: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #dfe8f2;
+        border-radius: 8px;
+        background: white;
+        color: var(--dark);
+        font:
+          12px "DM Sans",
+          sans-serif;
+        outline: none;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px #2585f515;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+
+      .consent {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin-top: 18px;
+        font-size: 10px;
+        color: var(--muted);
+      }
+
+      .consent input {
+        margin-top: 4px;
+        accent-color: var(--blue);
+      }
+
+      .submit {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .form-note {
+        text-align: center;
+        font-size: 10px;
+        color: #91a0b2;
+        margin: 12px 0 0;
+      }
+
+      /* FOOTER */
+
+      footer {
+        padding: 25px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+      }
+
+      .footer-inner p,
+      .footer-inner small {
+        color: #8794a5;
+        font-size: 10px;
+        margin: 0;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 18px;
+        color: #9aa6b5;
+        font-size: 10px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 800px) {
+        .goal-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .about-grid {
+          gap: 30px;
+        }
+        .price-inner {
+          gap: 25px;
+        }
+        .register-grid {
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: calc(100% - 34px);
+        }
+
+        .header {
+          height: auto;
+        }
+
+        .nav {
+          padding: 12px 0;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .nav nav {
+          width: 100%;
+          gap: 14px;
+          overflow-x: auto;
+          padding-bottom: 5px;
+        }
+
+        .nav nav a {
+          white-space: nowrap;
+          font-size: 11px;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1fr;
+          padding: 55px 0 20px;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .hero-visual {
+          min-height: 310px;
+        }
+
+        .circle {
+          width: 255px;
+          height: 255px;
+        }
+
+        .korean-card {
+          width: 260px;
+        }
+
+        .korean-card strong {
+          font-size: 42px;
+        }
+
+        .trust-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .section {
+          padding: 60px 0;
+        }
+
+        .about-grid,
+        .price-inner,
+        .register-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .goal-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .goal-card {
+          padding: 16px 12px;
+        }
+
+        .curriculum-grid,
+        .method-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .two-col {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .form-card {
+          padding: 22px 17px;
+        }
+
+        .footer-inner {
+          flex-wrap: wrap;
+        }
+
+        .footer-inner p {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#home" class="logo">
+          <span class="logo-icon">한</span>
+          Korean<span>Basic</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+          <a href="#tentang">Tentang</a>
+          <a href="#tujuan">Tujuan</a>
+          <a href="#kurikulum">Kurikulum</a>
+          <a href="#biaya">Biaya</a>
+          <a href="#daftar" class="nav-button">Daftar Kelas</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <span class="eyebrow">KELAS BAHASA KOREA BASIC</span>
+
+            <h1>
+              Belajar Bahasa Korea
+              <span>Mulai dari Nol.</span>
+            </h1>
+
+            <p>
+              Tidak harus punya pengalaman sebelumnya. Mulai dari mengenal
+              Hangeul, belajar membaca, memahami tata bahasa, hingga mampu
+              menulis kalimat sederhana dalam bahasa Korea.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#daftar" class="button"> Daftar Sekarang → </a>
+
+              <a href="#kurikulum" class="button button-outline">
+                Lihat Materi
+              </a>
+            </div>
+
+            <div class="hero-price">
+              Belajar dengan biaya terjangkau mulai
+              <strong>Rp10.000</strong> / pertemuan.
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="circle"></div>
+
+            <div class="korean-card">
+              <small>YOUR FIRST KOREAN WORD</small>
+              <strong>안녕하세요</strong>
+              <span>Annyeonghaseyo</span>
+              <p>Halo, apa kabar?</p>
+            </div>
+
+            <span class="float one">한국어</span>
+            <span class="float two">가나다</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST -->
+
+      <section class="trust">
+        <div class="container trust-grid">
+          <div class="trust-item">
+            <strong>Untuk Pemula</strong>
+            <span>Mulai tanpa pengalaman sebelumnya</span>
+          </div>
+
+          <div class="trust-item">
+            <strong>Materi Bertahap</strong>
+            <span>Belajar dari dasar hingga kalimat sederhana</span>
+          </div>
+
+          <div class="trust-item">
+            <strong>Harga Terjangkau</strong>
+            <span>Rp10.000 untuk setiap pertemuan</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+
+      <section class="section" id="tentang">
+        <div class="container about-grid">
+          <div>
+            <span class="eyebrow">TENTANG KAMI</span>
+
+            <h2>
+              Belajar bahasa baru dengan cara
+              <span>yang lebih sederhana.</span>
+            </h2>
+
+            <p>
+              Korean Basic Class merupakan program pembelajaran bahasa Korea
+              untuk pemula yang ingin membangun kemampuan bahasa Korea dari
+              dasar.
+            </p>
+          </div>
+
+          <div class="about-text">
+            <p>
+              Pembelajaran disusun secara bertahap agar peserta tidak hanya
+              mengenal huruf Korea, tetapi juga memahami cara membaca,
+              penggunaan kosakata, struktur tata bahasa, serta latihan menulis.
+            </p>
+
+            <p>
+              Kami ingin membantu peserta membangun fondasi bahasa Korea yang
+              kuat melalui pemahaman materi dan latihan secara konsisten.
+            </p>
+
+            <ul class="check-list">
+              <li>Materi untuk pemula</li>
+              <li>Belajar membaca Hangeul</li>
+              <li>Memahami tata bahasa dasar</li>
+              <li>Latihan menulis bahasa Korea</li>
+              <li>Latihan dan evaluasi pembelajaran</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GOALS -->
+
+      <section class="section goals" id="tujuan">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">TARGET PEMBELAJARAN</span>
+            <h2>Empat kemampuan yang akan <span>dipelajari.</span></h2>
+            <p>
+              Fokus pada kemampuan dasar yang menjadi fondasi untuk mempelajari
+              bahasa Korea lebih lanjut.
+            </p>
+          </div>
+
+          <div class="goal-grid">
+            <article class="goal-card">
+              <div class="goal-icon">가</div>
+              <h3>Membaca (Reading)</h3>
+              <p>
+                Mengenal huruf Hangeul, memahami bunyi huruf, membaca suku kata,
+                kosakata, dan kalimat sederhana.
+              </p>
+            </article>
+
+            <article class="goal-card">
+              <div class="goal-icon">문</div>
+              <h3>Tata Bahasa (Grammar)</h3>
+              <p>
+                Memahami susunan kalimat, partikel dasar, kata kerja, kata
+                sifat, dan bentuk kalimat sederhana.
+              </p>
+            </article>
+
+            <article class="goal-card">
+              <div class="goal-icon">단</div>
+              <h3>Kosakata (Vocabulary)</h3>
+              <p>
+                Mempelajari kosakata sehari-hari, angka, waktu, tempat,
+                aktivitas, dan ungkapan umum.
+              </p>
+            </article>
+
+            <article class="goal-card">
+              <div class="goal-icon">쓰</div>
+              <h3>Menulis (Writing)</h3>
+              <p>
+                Berlatih menulis huruf Hangeul, kata, menyusun kalimat, dan
+                membuat tulisan pendek.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURRICULUM -->
+
+      <section class="section" id="kurikulum">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">KURIKULUM PEMBELAJARAN</span>
+            <h2>Belajar secara <span>bertahap.</span></h2>
+            <p>
+              Contoh susunan materi untuk membangun fondasi bahasa Korea dari
+              tingkat paling dasar.
+            </p>
+          </div>
+
+          <div class="curriculum-grid">
+            <article class="lesson">
+              <div class="lesson-number">01</div>
+              <div>
+                <small>PERTEMUAN 01</small>
+                <h3>Pengenalan Hangeul</h3>
+                <p>
+                  Mengenal huruf vokal dan konsonan Korea, serta memahami bentuk
+                  dasar Hangeul.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">02</div>
+              <div>
+                <small>PERTEMUAN 02</small>
+                <h3>Membaca dan Menulis Hangeul</h3>
+                <p>
+                  Menggabungkan huruf menjadi suku kata, membaca, dan berlatih
+                  menulis.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">03</div>
+              <div>
+                <small>PERTEMUAN 03</small>
+                <h3>Salam dan Perkenalan</h3>
+                <p>
+                  Mengenal ungkapan salam, memperkenalkan diri, dan percakapan
+                  dasar.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">04</div>
+              <div>
+                <small>PERTEMUAN 04</small>
+                <h3>Kosakata Sehari-hari</h3>
+                <p>
+                  Mengenal kata benda, angka, waktu, tempat, dan aktivitas
+                  sehari-hari.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">05</div>
+              <div>
+                <small>PERTEMUAN 05</small>
+                <h3>Dasar Tata Bahasa</h3>
+                <p>
+                  Memahami susunan kalimat Korea, partikel dasar, dan
+                  penggunaannya.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">06</div>
+              <div>
+                <small>PERTEMUAN 06</small>
+                <h3>Kata Kerja dan Kata Sifat</h3>
+                <p>
+                  Mengenal kata kerja dan kata sifat serta menggunakannya dalam
+                  kalimat sederhana.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">07</div>
+              <div>
+                <small>PERTEMUAN 07</small>
+                <h3>Menyusun Kalimat</h3>
+                <p>
+                  Berlatih menyusun kalimat sederhana berdasarkan pola tata
+                  bahasa yang dipelajari.
+                </p>
+              </div>
+            </article>
+
+            <article class="lesson">
+              <div class="lesson-number">08</div>
+              <div>
+                <small>PERTEMUAN 08</small>
+                <h3>Latihan dan Evaluasi</h3>
+                <p>
+                  Latihan membaca, memahami kalimat, dan menulis paragraf
+                  pendek.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- METHOD -->
+
+      <section class="section method">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">METODE PEMBELAJARAN</span>
+            <h2>Belajar bukan hanya <span>menghafal.</span></h2>
+            <p>
+              Setiap materi diarahkan agar peserta memahami dan mampu
+              mempraktikkan apa yang dipelajari.
+            </p>
+          </div>
+
+          <div class="method-grid">
+            <article class="method-card">
+              <div class="number">01</div>
+              <h3>Penjelasan Materi</h3>
+              <p>
+                Memahami konsep dasar, aturan membaca, kosakata, dan tata bahasa
+                melalui penjelasan yang mudah diikuti.
+              </p>
+            </article>
+
+            <article class="method-card">
+              <div class="number">02</div>
+              <h3>Latihan Praktik</h3>
+              <p>
+                Mengerjakan latihan membaca, menulis Hangeul, memahami pola
+                kalimat, dan menyusun kata.
+              </p>
+            </article>
+
+            <article class="method-card">
+              <div class="number">03</div>
+              <h3>Evaluasi Pembelajaran</h3>
+              <p>
+                Mengukur pemahaman melalui latihan dan evaluasi agar peserta
+                mengetahui materi yang sudah dikuasai.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICE -->
+
+      <section class="section" id="biaya">
+        <div class="container price-inner">
+          <div>
+            <span class="eyebrow">BIAYA PEMBELAJARAN</span>
+
+            <h2>
+              Belajar bahasa Korea,
+              <span>tetap terjangkau.</span>
+            </h2>
+
+            <p>
+              Kesempatan belajar bahasa Korea dari dasar dengan biaya yang ramah
+              untuk pemula.
+            </p>
+          </div>
+
+          <div class="price-panel">
+            <small>BIAYA SETIAP PERTEMUAN</small>
+
+            <strong class="price-value">Rp10.000</strong>
+
+            <p>Per jam / per pertemuan</p>
+
+            <div class="price-line"></div>
+
+            <p>
+              Durasi: <strong>1 jam</strong><br />
+              Biaya: <strong>Rp10.000</strong><br />
+              Jadwal: Pagi, sore, dan malam.
+            </p>
+
+            <a href="#daftar" class="button"> Daftar Kelas → </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+
+      <section class="section faq">
+        <div class="container">
+          <div class="section-title">
+            <span class="eyebrow">INFORMASI PENDAFTARAN</span>
+            <h2>Pertanyaan yang <span>sering diajukan.</span></h2>
+            <p>
+              Beberapa informasi yang perlu diketahui sebelum mengikuti kelas.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>Apakah kelas ini cocok untuk pemula?</summary>
+              <p>
+                Ya. Materi disusun mulai dari pengenalan Hangeul sehingga
+                peserta tidak harus memiliki pengalaman belajar bahasa Korea
+                sebelumnya.
+              </p>
+            </details>
+
+            <details>
+              <summary>Apa saja yang akan dipelajari?</summary>
+              <p>
+                Peserta akan mempelajari Hangeul, membaca, kosakata, tata bahasa
+                dasar, menyusun kalimat, dan latihan menulis bahasa Korea.
+              </p>
+            </details>
+
+            <details>
+              <summary>Berapa biaya setiap pertemuan?</summary>
+              <p>
+                Biaya pembelajaran adalah Rp10.000 untuk setiap pertemuan dengan
+                durasi satu jam.
+              </p>
+            </details>
+
+            <details>
+              <summary>Apakah ada latihan dan tugas?</summary>
+              <p>
+                Pembelajaran dirancang dengan latihan membaca, menulis, dan
+                memahami tata bahasa untuk membantu peserta memperkuat
+                pemahaman.
+              </p>
+            </details>
+
+            <details>
+              <summary>Bagaimana cara mendaftar?</summary>
+              <p>
+                Isi formulir pendaftaran yang tersedia. Setelah menekan tombol
+                kirim, WhatsApp akan terbuka dengan pesan pendaftaran yang sudah
+                disiapkan untuk dikirim kepada pengelola.
+              </p>
+            </details>
+
+            <details>
+              <summary>Bagaimana mengetahui jadwal dan metode kelas?</summary>
+              <p>
+                Pilihan jadwal tersedia pada formulir. Informasi teknis
+                pelaksanaan kelas akan dikonfirmasi oleh pengelola melalui
+                WhatsApp.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGISTER -->
+
+      <section class="section register" id="daftar">
+        <div class="container register-grid">
+          <div class="register-info">
+            <span class="eyebrow">PENDAFTARAN PESERTA</span>
+
+            <h2>
+              Yuk, mulai perjalanan belajar
+              <span>bahasa Korea!</span>
+            </h2>
+
+            <p>
+              Lengkapi data diri dan pilih jadwal yang tersedia. Setelah
+              mengirim formulir, kamu akan diarahkan ke WhatsApp untuk
+              melanjutkan proses pendaftaran.
+            </p>
+
+            <div class="contact">
+              <small>HUBUNGI PENGELOLA</small>
+              <strong>0812-5292-6206</strong>
+            </div>
+          </div>
+
+          <form class="form-card" id="registrationForm">
+            <h3>Formulir Pendaftaran</h3>
+            <p>Silakan lengkapi informasi berikut dengan benar.</p>
+
+            <div class="form-group">
+              <label for="nama">Nama lengkap *</label>
+              <input
+                id="nama"
+                name="nama"
+                type="text"
+                placeholder="Masukkan nama lengkap"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="wa">Nomor WhatsApp *</label>
+              <input
+                id="wa"
+                name="wa"
+                type="tel"
+                placeholder="Contoh: 081234567890"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="tanggal_lahir">Tanggal lahir *</label>
+              <input
+                id="tanggal_lahir"
+                name="tanggal_lahir"
+                type="date"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="alamat">Alamat lengkap *</label>
+              <textarea
+                id="alamat"
+                name="alamat"
+                placeholder="Jalan, RT/RW, kelurahan, kecamatan, kota/kabupaten"
+                autocomplete="street-address"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="level">Pengalaman belajar bahasa Korea *</label>
+              <select id="level" name="level" required>
+                <option value="">Pilih pengalaman</option>
+                <option>Belum pernah belajar</option>
+                <option>Sudah mengenal Hangeul</option>
+                <option>Pernah belajar bahasa Korea dasar</option>
+              </select>
+            </div>
+
+            <div class="two-col">
+              <div class="form-group">
+                <label for="durasi">Durasi pertemuan</label>
+                <input
+                  id="durasi"
+                  name="durasi"
+                  type="text"
+                  value="1 jam"
+                  readonly
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="jadwal">Pilihan jadwal *</label>
+                <select id="jadwal" name="jadwal" required>
+                  <option value="">Pilih jadwal</option>
+                  <option value="Pagi (09.00–10.00)">
+                    Pagi (09.00–10.00) Full
+                  </option>
+                  <option value="Sore (15.00–16.00)">
+                    Sore (15.00–16.00) Full
+                  </option>
+                  <option value="Malam (19.00–20.00)">
+                    Malam (19.00–20.00) Available
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pesan">Pesan tambahan (opsional)</label>
+              <textarea
+                id="pesan"
+                name="pesan"
+                placeholder="Tulis pertanyaan atau informasi tambahan"
+              ></textarea>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="persetujuan" required />
+              <span>
+                Saya menyatakan bahwa data yang saya masukkan benar dan
+                menyetujui penggunaan data tersebut untuk keperluan pendaftaran
+                serta komunikasi terkait kelas Korean Basic.
+              </span>
+            </label>
+
+            <button type="submit" class="button submit">
+              Kirim Pendaftaran via WhatsApp ↗
+            </button>
+
+            <p class="form-note">
+              Data akan disiapkan sebagai pesan WhatsApp. Periksa kembali
+              sebelum mengirimkannya.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <a href="#home" class="logo">
+            <span class="logo-icon">한</span>
+            Korean<span>Basic</span>
+          </a>
+
+          <p>Belajar dari nol, berkembang bersama.</p>
+
+          <small>© <span id="year"></span> Korean Basic Class</small>
+        </div>
+
+        <div class="footer-bottom">
+          Korean Basic Class · Basic Korean Learning Program
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const WHATSAPP_NUMBER = "6281252926206";
+
+      // Tahun otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Tanggal lahir tidak boleh melebihi hari ini
+      const today = new Date();
+      const localToday = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0"),
+      ].join("-");
+
+      document.getElementById("tanggal_lahir").max = localToday;
+
+      // Formulir pendaftaran
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!this.reportValidity()) return;
+
+          const form = new FormData(this);
+
+          const nama = String(form.get("nama")).trim();
+          const wa = String(form.get("wa")).trim();
+          const tanggalLahir = String(form.get("tanggal_lahir")).trim();
+
+          const alamat = String(form.get("alamat")).trim();
+
+          const level = String(form.get("level")).trim();
+
+          const durasi = String(form.get("durasi")).trim();
+
+          const jadwal = String(form.get("jadwal")).trim();
+
+          const pesan = String(form.get("pesan")).trim() || "-";
+
+          const biaya = "Rp10.000";
+
+          // Format tanggal menjadi DD-MM-YYYY
+          const tanggalParts = tanggalLahir.split("-");
+          const tanggalFormat = `${tanggalParts[2]}-${tanggalParts[1]}-${tanggalParts[0]}`;
+
+          const text = [
+            "HALO, SAYA INGIN MENDAFTAR KELAS BAHASA KOREA BASIC.",
+            "",
+            "=== DATA DIRI PESERTA ===",
+            `Nama lengkap: ${nama}`,
+            `Nomor WhatsApp: ${wa}`,
+            `Tanggal lahir: ${tanggalFormat}`,
+            `Alamat: ${alamat}`,
+            "",
+            "=== DATA PENDAFTARAN ===",
+            `Pengalaman belajar: ${level}`,
+            `Durasi pertemuan: ${durasi}`,
+            `Estimasi biaya: ${biaya}`,
+            `Pilihan jadwal: ${jadwal}`,
+            `Pesan tambahan: ${pesan}`,
+            "",
+            "Mohon informasi mengenai proses pendaftaran selanjutnya.",
+            "Terima kasih.",
+          ].join("\n");
+
+          const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+          window.open(whatsappURL, "_blank", "noopener,noreferrer");
+        });
+    </script>
+  </body>
+</html>
