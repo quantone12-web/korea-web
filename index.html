@@ -754,29 +754,56 @@
           width: calc(100% - 34px);
         }
 
+        /* MOBILE TOPBAR */
         .header {
-          height: auto;
+          height: 65px;
         }
 
         .nav {
-          padding: 12px 0;
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 12px;
+          height: 100%;
+          padding: 0;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .logo {
+          font-size: 17px;
+          gap: 7px;
+          white-space: nowrap;
+        }
+
+        .logo-icon {
+          width: 34px;
+          height: 34px;
+        }
+
+        /* Sembunyikan semua menu navigasi */
+        .nav nav a:not(.nav-button) {
+          display: none;
         }
 
         .nav nav {
-          width: 100%;
-          gap: 14px;
-          overflow-x: auto;
-          padding-bottom: 5px;
+          display: flex;
+          width: auto;
+          overflow: visible;
+          padding: 0;
+          gap: 0;
         }
 
-        .nav nav a {
-          white-space: nowrap;
+        /* Tombol daftar kelas */
+        .nav nav .nav-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 9px 14px;
           font-size: 11px;
+          border-radius: 8px;
+          white-space: nowrap;
         }
 
+        /* HERO */
         .hero-inner {
           grid-template-columns: 1fr;
           padding: 55px 0 20px;
@@ -785,7 +812,9 @@
         .hero h1 {
           font-size: 42px;
         }
-
+        .nav nav a:not(.nav-button) {
+          display: none !important;
+        }
         .hero-visual {
           min-height: 310px;
         }
